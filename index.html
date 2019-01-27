@@ -3,23 +3,54 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Advanced CSS</title>
+    <title>CSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.scss" />
   </head>
   <body>
-    <p>Don't look for another team. Real madrid is here!</p>
-    <div id="photo">
-      <div class="overlay"><div class="text">SIIIIIIIIIIIIIM!</div></div>
-    </div>
+    <div class="wrapper">
+      <nav id="main-navigation">
+        <ul>
+          <li><a href="#" class="current">Home</a></li>
+          <li><a href="#">Best Buy</a></li>
+          <li><a href="#">Offers</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </nav>
 
-    <div class="container">
-      <img
-        src="https://i.ytimg.com/vi/5hFd6zGkxLE/maxresdefault.jpg"
-        id="cris"
-      />
-      <div class="overlay"><div class="text">SIMMMMMMMM!</div></div>
+      <div class="lead-banner">
+        <img
+          src="https://github.com/iamshaunjp/CSS-for-Beginners---Bikes-Website/blob/master/images/lead-banner.jpg?raw=true"
+          alt=""
+        />
+      </div>
+
+      <section id="shop">
+        <img
+          class="product-image"
+          src="https://github.com/iamshaunjp/CSS-for-Beginners---Bikes-Website/blob/master/images/bike.jpg?raw=true"
+          alt=""
+        />
+
+        <h2 class="product-name">Bike XzY 2019</h2>
+
+        <span class="price"> $359.99 </span>
+        <a href="#" class="add-to-bag">Add to shopping</a>
+        <img
+          class="rating"
+          src="https://github.com/iamshaunjp/CSS-for-Beginners---Bikes-Website/blob/master/images/stars.png?raw=true"
+          alt=""
+        />
+      </section>
+
+      <div class="footer-banner">
+        <img
+          src="https://github.com/iamshaunjp/CSS-for-Beginners---Bikes-Website/blob/master/images/footer.jpg?raw=true"
+          alt=""
+        />
+      </div>
     </div>
   </body>
 </html>
