@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Title</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+              <!-- Deletable Contact Chip -->
+<span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+        <img class="mdl-chip__contact" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAADpCAMAAABx2AnXAAABVlBMVEX////w2rFYWVsREiSLXzxBQUP5MT6ATy7ewIwAAADa2tvy8vLGxcdMTVCATi3+/v/4+PhUVVe+vr4xMTQAABrt38azs7RFRUeFVzQAABf7+fQLDSE6OjxsbW5LS00AABXr1Kh6RB35ITJBQUxubnYUFSb+Lz2UlJqFVS4nKDaHiJB6e4LhyJvSwrnr6+shITG8o5OkpKTg19Daxo+SkpMAAB8AAAxlZWbV1dnbvoV8fH3o1rT4N0QrKy5RUVzTMz6oine2lHDz69usu7pTP0KQOT/4V2Lyw8bZ4+H7b3f2lZz6FyqBO0H2hIl4RkrINEAzQEG0mp30qa7y0tXx4ePx2tz3YGn1trv0par2Qk1bW2Y6OkVZPkJULTOkJi8fMjShOD/iMj5qPUDSt5CQaE+ed1O8nHezmoeog2GadmDYzsR0PATvaFvpim3ionvyVFHrfGYWFxqfRSdiAAANmklEQVR4nO2de3vaRhbGMZiEuyHIWLbAgBGWJXExhNjYTojj3rZNu/U22aaBbretnTi4adr9/v/sjO4aCaz7CD96E2IQIOmn886ZMzNKEotFihQpUqRIkSJFihTJF2V7w263ewge3WEvWxS2bWA+J9faub2Zrzc1KlzPb7rDIu7zciEYk+E5CVCAHqoqFAAeOT8c4j5B57qd/9EUkRQw9QmgO+/2cJ+iE/XOm9pAmQgEc756bLcPm8uxJFsCtpVqcN0/Cg/NAlYQcLSuBKa8WZX2thE7bBqwlNekIL0nVyNsG7FuUxcU6SlJriMS+QrQkteHK4A2/MPoQSOVQic78jDsiaR4jdiw8HAhlRI58JXmw8Ms7nNfqsMmyrUcSw4cMGSo0XoFJGB3hEvH1iyAthbSQvKmqc0bhYJlLsGTII10cRMYlB0ens/naNawwSWwFZrzUGWRXvcaFoBIxWubS0QLT+6/nTeFvgvtlh1wQbTmdTiKkeHcvOC1lg/N0Q53cFPFijdN2X8onlMuoAL2oA3XF9XxzgMm6ABverxdMOyCFaArLkB2g5Gra8pVWFYc2iCbYypENtB4FdzkQhOR65gamqF8ctZzhY9s3kRi5S2WQIajDHFWx4efrEc6rePt6GAeOBgSMFt1vB2yoPuzrH4iyi+udTLokHV1U1G+cYGQBdqbbcTmgcQr+EbWa+qs6A8UeUC+uwm4zu9qUofH3bKKNe/2Ah9z3jT9NuIBjpHLRuy64LMRDw6DxwIqrmu4/AgYruGYtv71w4nYhplDbdnhAxceH8bgyNlPJ5Ln2O4sULO9+WSvuAzmFOygh22iW9ONGec2SPLdiyugD+vO0IARsU3gLwEj19931iRdvXOEhnFSUWNFfe4AWI01ja7sRw1f5tCD6U6c/KDDgnphe2EC56qEDFZAwN6jWPaDBlMiPg3NIka+65hwra01PtghwzsFPFRuJ1LByHcGG8p6b4OMxLoe0VNvQVFO6MMiLFt2xOvEWHYdBSNfLOECdrSa+HF2YlDXyp1tlriAXlirKQ8wrx+dizMDchtb6kNbdiQxr9PCWcWCAmaFa22tY8GOgc+2oVJumIJg5DsrXGtWsiOJc1UMatiUliKEiFnkshA0zAuZsVhROxwz75fNdUeFdXCLGUyaMBUWL69scN0VNNxJUV2TKDTN6sOler8sPWK/L0e+LbFgNXFotKR4vMZ+g0dRurmXXFggLtPCESjubC+vShQK9hqYBs3Uj9i7sZjUyOw3MFVmTQ1zCSxI6Mms92AmahjRwgAGb/4t2OnBrKBhLzygDpsFF0aU9V6XRrBO5MgaNh1kehOBDEmGCqz40KURFXU+yGihAIudecS1BhubGDYyFGDecUFdvYAz/mEA2/EWDITt6sPBeQjuu7/wGgyynWGGgpf1wlGVeIfwgalO2fSBa20Na3V/0UilOhceJkWNLjY7qdQZHrzNkxTQiR9OBH0a3PlJCgfZhcCVSvkEJu48hQFMPrQvXArYZuBcOyeBgHUCB7sIBiz4VrYZga0YmGJFf7Ni8GBy8vCpH5O5MOT7lK8Rk3Z+gqFoPAsE7CJ4sB25p/GDq4GtG4spedEfsBNsAQMjF+nofoCJSfEk+IJK0I5QgvvSyDq4MoeWzA8wvFwSmQ+NrCFy4ZzQOTvxo5F1hPaFjUs48EXHBy+epBrYlzRB2vd+1uMMS5pHtOH5lGkjDFiCvJ6BC4ENRXkcMkzdspk8bWVhyBuydrxMjCEKmLdrZCEKmKch2wzXvwHqXWIMVcA8TIywhYUpYp4tk+2EigrKk/wRnqJDlSdmDFWql+WBGTGt9N2lTddk4eRyfcdHGBuYKHfNrBHKBibKDVmYudzczRJuLudkYedyShZ+LmftbBW4AJn94iq0eR6RvZ66Afvl0JW+5rLV0DBO+dqX9RH1ajQvRTsnHWtoHVxrYA4F13EtoDXwLe45lLhAfQdaB+eqpUPJK++LV2Ia0i0qqwpmGrdGQ7nxZpXBBLhOQ1Kn09G9s+JgixWBhUMRWAQWEt1XsA3lHu97BhbLnHVOTu6GA59p3K7QoCU7+l+lmBX+espiJvCrs3mRLdZKY9zna1W5Url6WswC9S42P31KPX78WMcEXj/+dAWghI9sVcujEP/XOqqyp+VqMrnbE047W3yz9/Svv/8U6CSlPv358e2D19L7j8rJZDmfw33Wd2qjUgVYyeSzXFbS1/uCnv718e+/P3786+0D+Grvp6IEdgo/Xn12iv3fuViuTK2cFFTlpDPPvtp7IErgk56+lQKa7e1Kn09WwpxEBmK4oHbliBW/lslUvfxBxs6V5S+UjzO4T3+RcnnlLIEXxzLZawPY/pcK9Ui5EslqeRCa/zRIq4yQNBSVR3JQit+gZC+/ksGy+aT2O6VHoUPrDUpb2nNMVo+LSsieIgH7UXkr80z3pWS+Fq78mB2USnE9WLKaUfz2kz5ke6+UdwZV/ZfipXwtPE0NRCsfj8f1p5gELUYx3Nt9Ldd36hvHCFgpDtBOc6EwZGYkYMVLCFi1ppx/8c1LrRP/rXBlkO8kd4U95Wv421ruNF+KC8qjJ7mleDFb/FIN2d43KnCljH5H3Be4VAOcZdZGrrYrYcXjuyhY+ZFquTdqK9t/rfKeVtEvyXuLAzRsxYgaLagt9BylQhgF21Od2DNcjKRmh7iiNq5psQy5A0oNjaYrUzuxYg51og5MQAu8rWVOd3XnYMgdSVgIK330j2ZtzMSJYvbQogWbRrKjkh7LJHcALyrFR1bTRe9/rWw1OlHOHur1ytcCHIc+iufjqExOMllSag9tP6YUiuNnJt8x7LiUHwWURYALDUc3yR0wZHIh/Erbjz2Vx5gjoxORRiahlYIY0hQHBhcuBFOKD10HraTFuEUw4PNT3+usXs3oQum6mkTsWIrNd9pice+NVHaYcJl5QQqav1yVXdMrKsrYzKRCWFt4KGmxODAk+61lO/dz8iA7WhQu6bqifixXxMkqfREspsViDY3YHTuP+zaiyRwvP3Tc4EepENYlRXn8nEGuwiIXqvvO+2THXH6JUxaRCZM2XyFDaLhRmHezwwW0y/nRW1esHBrtp5/BQth0oGkoOyztveZ99TiwxGUYRsNCWJ8UpbTYQzOHBTsAQ9S8TiEja1yGnL8FbaepFMW0CAtgtOyweIC4tz3aHelQkaFiLINCuPdW38RgWjSWHWiVuJDMy5hZ9KHZoAwUwvqkCOeBgT9Lhu7ZkhcB2bF3ZNbyRtys+qjGjUnxwYPX2bFxKGb5IDWvcmPGog/jZhVjNVP8AQXbe2WYd7MeMeD3kUdgx5YPaRIyUAh/Z5wJLqLzbtYDBrTrTQ0ysB4wk3qxeryhqxTFtPgPwwWw1I/JOvaiO8tYjxeUiReRGW44iP7M0MTsXL14fuAB2MgemMGM5X+hXGAQbSiALSZ7Re4zY88el4kZ/4k6EQyiDXG1eRQPQmarhQkynLTRit9fujGiILcpf+PY9iFRM15+j4Zs/1sEzK4RPUiMGfvHRM14+YXBi5+7MyJQiXMJZt+JcYMZP0cD9hwJmJNjHLv04qn9i2kohS+f60O2/4UezIEpwDHcVflZ+00MSl9ZXf6KePFnt0aEYI9cgfWcuCSOmvFnPdhz/bs2aimNSu4S/tghmN6Ml7/pnPirzomOjAjA3FXCOYdgejNe/qIN2f7v7o0IwE5dTXtXHB4W6cx+14L95oERXY/KKk4jhphRu4ykLzuc7h8bmM6M2uJj/1sPjIgTTGfGb1UwXQHs1IhA2MB0ldXnC5zofO8YwbRmVIsPXdnh2Ih4wTRm1BTCmgLYhRGxgmnN+LNSdmgC5mbfbsHcmEVbWcnFh7bscHXR3IJt5d1oqyzrv7+83HsJ9R9lU9XVrnfdjVsyOXd6pCj3RpRmi0uF+eZoXIquSaRIkSJFihQpkiVl7qli6XuqWOKeKgJbNUlglPRIaH4mEgSRoNRX8Bmhvgy5RDBqRiUoti89b0vvbU8ndXYmo7QnVIKdzlaFTAQj6CmxzW3XtxPb9TTXpup1gqqnB0A0k66n0xSVTrPjdHrGtVYLjOpz9T7PM1yaZ2ieYRmGbzGTzCSdpntTZjxmW+PxJNcCP4ONGCU0BbE5UEAJ+ZW4Bb4gKKINHgnwB3gGN2jBEnWmTdP0Nnik09wTJpGm6elRa5zhaYbNpaeV3CzN9sYERQXLxRM8OFN2lmi3E32OnhEsQfQ5ok2xiT5oO+A3zTzhJjw3YWZMC/zgaI4mtGDEdMpNmSnNt4g6RzFHdZqbEEfpJxmemVTSs0ruqA7A+gH7cJvnpwMGPFocx0y4SWXKwy0c0eInHM/xDE+3+QloLjPgM3rSZtIceKUDS1ADvs9RLMtQ/emUnraZ6YRgaC7XyrAZOsczFb4Fnh8FC0a1KiwzYfIAihs8AYw0zTCTATeb8FOO41mO4Y84CM3TUw7yT45pntvWgRF0n2A5nmI5+ohO01yfZanJiN+uT1tPmGn9CFgSbA46dQDrgfNobc/YPkvM+u3+jCJa/f4MPGf7/TbLtqgJeJaY1Vv11mwygW/r25jQQ1HbhPAAv7ZhayJAlgTbqTr4LFEHrTL4XkzIHpSUOCgpX4ibEsJT5RPCdkrthe975XH/FIGtmv4P7d9+2HIinDgAAAAASUVORK5CYII="></img>
+        <span class="mdl-chip__text">Deletable Contact Chip</span>
+        <a href="#" class="mdl-chip__action"><i class="material-icons">cancel</i></a>
+    </span>
+            <a class="mdl-navigation__link" href="">Home</a>
+            <a class="mdl-navigation__link" href="">About</a>
+            <a class="mdl-navigation__link" href="">Store</a>
+            <a class="mdl-navigation__link" href="">Contact</a>
+            <!-- Number badge -->
+            <span class="mdl-badge" data-badge="4">Inbox</span>
+            <button id="show-dialog" type="button" class="mdl-button" style="color: #fff">Show Terms & Conditions</button>
+  <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Allow data collection?</h4>
+    <div class="mdl-dialog__content">
+      <p>
+        Allowing us to collect data will let us get you the information you want faster.
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button">Agree</button>
+      <button type="button" class="mdl-button close">Disagree</button>
+    </div>
+  </dialog>
+  <script>
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+  </script>
+            
+            <!-- Colored mini FAB button -->
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+        <i class="material-icons">add</i>
+      </button>
+      <!-- Expandable Textfield -->
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+    <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+      <i class="material-icons">search</i>
+    </label>
+    <div class="mdl-textfield__expandable-holder">
+      <input class="mdl-textfield__input" type="text" id="sample6">
+      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+    </div>
+  </div>
+</form>
+<!-- Multiline Tooltip -->
+<div id="tt4" class="icon material-icons">share</div>
+<div class="mdl-tooltip" for="tt4">
+Share your content<br>via social media
+</div>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Home</a>
+          <a class="mdl-navigation__link" href="">About</a>
+          <a class="mdl-navigation__link" href="">Store</a>
+          <a class="mdl-navigation__link" href="">Contact</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+              <!-- Wide card with share menu button -->
+              <style>
+                .demo-card-wide.mdl-card {
+                  width: 512px;
+                }
+                .demo-card-wide > .mdl-card__title {
+                  color: #fff;
+                  height: 176px;
+                  background: url("https://img.freepik.com/free-vector/abstract-background-with-geometric-style_23-2147821888.jpg?size=338&ext=jpg")
+                    center / cover;
+                }
+                .demo-card-wide > .mdl-card__menu {
+                  color: #fff;
+                }
+              </style>
+
+              <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Welcome</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris sagittis pellentesque lacus eleifend lacinia...
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a
+                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                  >
+                    Get Started
+                  </a>
+                </div>
+                <div class="mdl-card__menu">
+                  <button
+                    class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"
+                  >
+                    <i class="material-icons">share</i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <!-- Square card -->
+              <style>
+                .demo-card-square.mdl-card {
+                  width: 320px;
+                  height: 320px;
+                }
+                .demo-card-square > .mdl-card__title {
+                  color: #fff;
+                  background: url("https://blog.spoongraphics.co.uk/wp-content/uploads/2015/11/thumbnail9.jpg")
+                    bottom right 15% no-repeat #46b6ac;
+                }
+              </style>
+
+              <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Update</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan
+                  convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a
+                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                  >
+                    View Updates
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+              <!-- Square card -->
+              <style>
+                .demo-card-square.mdl-card {
+                  width: 320px;
+                  height: 320px;
+                }
+                .ma > .mdl-card__title {
+                  color: #fff;
+                  background: url("https://images-na.ssl-images-amazon.com/images/I/41coyFazKqL.jpg")
+                    bottom right 15% no-repeat #46b6ac;
+                }
+              </style>
+
+              <div class="demo-card-square mdl-card mdl-shadow--2dp ma">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text ">Update</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan
+                  convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a
+                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                  >
+                    View Updates
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+            <div class="mdl-tabs__tab-bar">
+              <a href="#starks-panel" class="mdl-tabs__tab is-active">Starks</a>
+              <a href="#lannisters-panel" class="mdl-tabs__tab">Table of Materials</a>
+              <a href="#targaryens-panel" class="mdl-tabs__tab">Staff</a>
+            </div>
+
+            <div class="mdl-tabs__panel is-active" id="starks-panel">
+              <ul>
+                <li>Eddard</li>
+                <li>Catelyn</li>
+                <li>Robb</li>
+                <li>Sansa</li>
+                <li>Brandon</li>
+                <li>Arya</li>
+                <li>Rickon</li>
+              </ul>
+              <button id="demo-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised" type="button">Show Snackbar</button>
+<div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+<script>
+(function() {
+  'use strict';
+  var snackbarContainer = document.querySelector('#demo-snackbar-example');
+  var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+  var handler = function(event) {
+    showSnackbarButton.style.backgroundColor = '';
+  };
+  showSnackbarButton.addEventListener('click', function() {
+    'use strict';
+    showSnackbarButton.style.backgroundColor = '#' +
+        Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    var data = {
+      message: 'Button color changed.',
+      timeout: 2000,
+      actionHandler: handler,
+      actionText: 'Undo'
+    };
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+}());
+</script>
+<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+  <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+  <span class="mdl-checkbox__label">Checkbox</span>
+</label>
+
+            </div>
+            <div class="mdl-tabs__panel" id="lannisters-panel">
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Material</th>
+      <th>Quantity</th>
+      <th>Unit price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+      <td>25</td>
+      <td>$2.90</td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+      <td>50</td>
+      <td>$1.25</td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+      <td>10</td>
+      <td>$2.35</td>
+    </tr>
+  </tbody>
+</table>
+              <!-- Slider with Starting Value -->
+<input class="mdl-slider mdl-js-slider" type="range"
+  min="0" max="100" value="25" tabindex="0">
+            </div>
+            <div class="mdl-tabs__panel" id="targaryens-panel">
+                    <!-- List items with avatar and action -->
+<style>
+.demo-list-action {
+  width: 300px;
+}
+</style>
+
+<div class="demo-list-action mdl-list">
+  <div class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-avatar">person</i>
+      <span>Bryan Cranston</span>
+    </span>
+    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+  </div>
+  <div class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-avatar">person</i>
+      <span>Aaron Paul</span>
+    </span>
+    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+  </div>
+  <div class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-avatar">person</i>
+      <span>Bob Odenkirk</span>
+    </span>
+    <span class="mdl-list__item-secondary-content">
+      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+  </span>
+  
+  </div>
+  <!-- Simple MDL Progress Bar -->
+<div id="p1" class="mdl-progress mdl-js-progress"></div>
+<script>
+  document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+    this.MaterialProgress.setProgress(44);
+  });
+</script>
+</div>
+
+            </div>
+          </div>
+
+          <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer__middle-section">
+              <div class="mdl-mega-footer__drop-down-section">
+                <input
+                  class="mdl-mega-footer__heading-checkbox"
+                  type="checkbox"
+                  checked
+                />
+                <h1 class="mdl-mega-footer__heading">Features</h1>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Updates</a></li>
+                </ul>
+              </div>
+
+              <div class="mdl-mega-footer__drop-down-section">
+                <input
+                  class="mdl-mega-footer__heading-checkbox"
+                  type="checkbox"
+                  checked
+                />
+                <h1 class="mdl-mega-footer__heading">Details</h1>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">Specs</a></li>
+                  <li><a href="#">Tools</a></li>
+                  <li><a href="#">Resources</a></li>
+                </ul>
+              </div>
+
+              <div class="mdl-mega-footer__drop-down-section">
+                <input
+                  class="mdl-mega-footer__heading-checkbox"
+                  type="checkbox"
+                  checked
+                />
+                <h1 class="mdl-mega-footer__heading">Technology</h1>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">How it works</a></li>
+                  <li><a href="#">Patterns</a></li>
+                  <li><a href="#">Usage</a></li>
+                  <li><a href="#">Products</a></li>
+                  <li><a href="#">Contracts</a></li>
+                </ul>
+              </div>
+
+              <div class="mdl-mega-footer__drop-down-section">
+                <input
+                  class="mdl-mega-footer__heading-checkbox"
+                  type="checkbox"
+                  checked
+                />
+                <h1 class="mdl-mega-footer__heading">FAQ</h1>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">Questions</a></li>
+                  <li><a href="#">Answers</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mdl-mega-footer__bottom-section">
+              <div class="mdl-logo">Title</div>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy & Terms</a></li>
+              </ul>
+            </div>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
